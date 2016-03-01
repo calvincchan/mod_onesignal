@@ -2,6 +2,8 @@ Purpose:
 =========
 
 mod_opensignal sends an API request to OpenSignal to send a push notification when a message is sent to an offline user.
+This code is based on the mod_zeropush (https://github.com/ZeroPush/mod_zeropush) extension. ZeroPush is outdated, so OpenSignal is a good alternative to send push notifications for free.
+
 
 The notification contains the following URI-encoded payload:
 
@@ -14,7 +16,8 @@ json
 }
 ```
 
-This is based on the mod_zeropush (https://github.com/ZeroPush/mod_zeropush) extension. ZeroPush is outdated, so OpenSignal is a good alternative to send push notifications for free.
+Feel free to add some other special attributes based on the documentation of OpenSignal (https://documentation.onesignal.com/docs/notifications-create-notification). You only need to change the `src/mod_opensignal.erl`
+
 
 Caveats:
 =========
@@ -51,7 +54,6 @@ cp ebin/mod_opensignal.beam /usr/lib/ejabberd/ebin/
 ```
 cp ebin/debian7_64bit/mod_opensignal.beam /usr/lib/ejabberd/ebin/
 ```
-
 
 
 eJabberd 2.1.10
