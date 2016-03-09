@@ -1,8 +1,8 @@
 %%%----------------------------------------------------------------------
 
-%%% File    : mod_opensignal.erl
+%%% File    : mod_onesignal.erl
 %%% Author  : Philipp Homann <phomann@wwwpage.de>
-%%% Purpose : Forward offline messages to push provider OpenSignal
+%%% Purpose : Forward offline messages to push provider OneSignal
 %%% Created : 29 Feb 2016 by Philipp Homann <phomann@wwwpage.de>
 %%%
 %%%
@@ -25,7 +25,7 @@
 %%%
 %%%----------------------------------------------------------------------
 
--module(mod_opensignal).
+-module(mod_onesignal).
 -author('phomann@wwwpage.de').
 
 -behaviour(gen_mod).
@@ -40,14 +40,14 @@
 -include("jlib.hrl").
 
 start(Host, _Opts) ->
-    ?INFO_MSG("Starting mod_opensignal for host \"~s\"", [Host] ),
+    ?INFO_MSG("Starting mod_onesignal for host \"~s\"", [Host] ),
     inets:start(),
     ssl:start(),
     ejabberd_hooks:add(offline_message_hook, Host, ?MODULE, send_notice, 10),
     ok.
 
 stop(Host) ->
-    ?INFO_MSG("Stopping mod_opensignal for host \"~s\"", [Host] ),
+    ?INFO_MSG("Stopping mod_onesignal for host \"~s\"", [Host] ),
     ejabberd_hooks:delete(offline_message_hook, Host,
 			  ?MODULE, send_notice, 10),
     ok.
