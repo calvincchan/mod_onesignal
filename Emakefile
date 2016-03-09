@@ -2,8 +2,8 @@
 %%%
 
 %%% On OSX with ejabberd installed through homebrew
-%%%{'src/mod_opensignal', [{outdir, "ebin"},{i,"/usr/local/Cellar/ejabberd/2.1.13/lib/ejabberd/include"}]}.
+%%%{'src/mod_onesignal', [{outdir, "ebin"},{i,"/usr/local/Cellar/ejabberd/2.1.13/lib/ejabberd/include"}]}.
 
 %%% On Ubuntu
-{'src/mod_opensignal', [{outdir, "ebin"},{i,"/usr/lib/ejabberd/include/"}]}.
+{'src/mod_onesignal', [{outdir, "ebin"},{i,"/usr/lib/ejabberd/include/"}]}.
 
