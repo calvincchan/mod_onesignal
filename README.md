@@ -37,7 +37,14 @@ Installing:
 ### Build a new version depending by your machine and OS
 
 * Make sure you have erlang installed on the machine you are building from
-  * You probably want this to be the same machine you intend to install/run ejabberd on. I'm not sure about the interoperability of ejabberd/erlang versions.
+  *  You probably want this to be the same machine you intend to install/run ejabberd on. I'm not sure about the interoperability of ejabberd/erlang versions.
+  * It is important to install erlang-de too, on debian for example:
+  
+```
+  sudo apt-get install erlang erlang-doc erlang-dev
+  
+```
+
 * Open the Emakefile and change `/usr/lib/ejabberd/include/` to the correct path on your machine where include files are
 * Run the `./build.sh` to build the `mod_onesignal.beam` file
 * Copy the `*.beam` file from the `ebin` directory to the location where the other modules are for your server. For Debian/Ubuntu it is 
